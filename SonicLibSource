@@ -442,7 +442,7 @@ function Library:CreateWindow(WinName)
                          ButtonButtonFrame_1.BorderColor3 = Color3.fromRGB(27,42,53) 
                          ButtonButtonFrame_1.BorderSizePixel = 0 
                          ButtonButtonFrame_1.Position = UDim2.new(0, 0,-0.0036764699, 0) 
-                         ButtonButtonFrame_1.Size = UDim2.new(0, 167,0, 22) 
+                         ButtonButtonFrame_1.Size = UDim2.new(0, 167,0, 12)
   ButtonButtonFrame_1.BackgroundTransparency = 1
                          
   
@@ -453,7 +453,7 @@ function Library:CreateWindow(WinName)
                          Button_1.BackgroundTransparency = 1 
                          Button_1.BorderColor3 = Color3.fromRGB(27,42,53) 
                          Button_1.BorderSizePixel = 0 
-                         Button_1.Size = UDim2.new(0, 167,0, 22) 
+                         Button_1.Size = UDim2.new(0, 167,0, 12) 
                          Button_1.Font = Enum.Font.Gotham 
                          Button_1.Text = LabName 
                          Button_1.TextColor3 = Color3.fromRGB(255,255,255) 
