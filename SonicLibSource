@@ -1,0 +1,436 @@
+local TweenService = game:GetService("TweenService")
+local Player = game.Players.LocalPlayer
+
+local Library = {}
+function Library:CreateWindow(WinName)
+	
+	local SonicLib = Instance.new("ScreenGui")
+	local Main_1 = Instance.new("Frame")
+	local UICorner_1 = Instance.new("UICorner")
+	local TopBar_1 = Instance.new("Frame")
+	local TopBar_2 = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local TextLabel_1 = Instance.new("TextLabel")
+	local UIPadding_1 = Instance.new("UIPadding")
+	local TextButton_1 = Instance.new("TextButton")
+	local UIPadding_2 = Instance.new("UIPadding")
+	local TabFrameHolder_1 = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local TabFrameHolder_2 = Instance.new("Frame")
+	local TabFrame_1 = Instance.new("ScrollingFrame")
+	local UIListLayout_1 = Instance.new("UIListLayout")
+	local UIPadding_3 = Instance.new("UIPadding")
+	local ItemFrameHolder_1 = Instance.new("Frame")
+	local CleanBG_1 = Instance.new("Frame")
+	
+	-- Properties:
+	SonicLib.Name = "SonicLib"
+	SonicLib.Parent = game.CoreGui
+
+	Main_1.Name = "Main"
+	Main_1.Parent = SonicLib
+	Main_1.AnchorPoint = Vector2.new(0.5, 0.5)
+	Main_1.BackgroundColor3 = Color3.fromRGB(66,66,66)
+	Main_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Main_1.Position = UDim2.new(0.5, 0,0.5, 0)
+	Main_1.Size = UDim2.new(0, 277,0, 163)
+	Main_1.Active = true
+	Main_1.Draggable = true
+	UICorner_1.Parent = Main_1
+	UICorner_1.CornerRadius = UDim.new(0,4)
+
+	TopBar_1.Name = "TopBar"
+	TopBar_1.Parent = Main_1
+	TopBar_1.BackgroundColor3 = Color3.fromRGB(38,38,38)
+	TopBar_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	TopBar_1.Size = UDim2.new(0, 277,0, 20)
+
+	TopBar_2.Name = "TopBar"
+	TopBar_2.Parent = TopBar_1
+	TopBar_2.BackgroundColor3 = Color3.fromRGB(38,38,38)
+	TopBar_2.BorderColor3 = Color3.fromRGB(27,42,53)
+	TopBar_2.BorderSizePixel = 0
+	TopBar_2.Position = UDim2.new(1.30002682e-05, 0,0.400000006, 0)
+	TopBar_2.Size = UDim2.new(0, 277,0, 16)
+
+	UICorner_2.Parent = TopBar_1
+	UICorner_2.CornerRadius = UDim.new(0,4)
+
+	TextLabel_1.Parent = TopBar_1
+	TextLabel_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	TextLabel_1.BackgroundTransparency = 1
+	TextLabel_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	TextLabel_1.BorderSizePixel = 0
+	TextLabel_1.Position = UDim2.new(0, 0,0.150000006, 0)
+	TextLabel_1.Size = UDim2.new(0, 220,0, 17)
+	TextLabel_1.Font = Enum.Font.Gotham
+	TextLabel_1.Text = WinName
+	TextLabel_1.TextColor3 = Color3.fromRGB(255,255,255)
+	TextLabel_1.TextSize = 14
+	TextLabel_1.TextXAlignment = Enum.TextXAlignment.Left
+
+	UIPadding_1.Parent = TextLabel_1
+	UIPadding_1.PaddingLeft = UDim.new(0,7)
+
+	TextButton_1.Parent = TopBar_1
+	TextButton_1.Active = true
+	TextButton_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	TextButton_1.BackgroundTransparency = 1
+	TextButton_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	TextButton_1.BorderSizePixel = 0
+	TextButton_1.Position = UDim2.new(0.931407928, 0,0.100000001, 0)
+	TextButton_1.Size = UDim2.new(0, 19,0, 19)
+	TextButton_1.Font = Enum.Font.Gotham
+	TextButton_1.Text = "X"
+	TextButton_1.TextColor3 = Color3.fromRGB(255,255,255)
+	TextButton_1.TextSize = 14
+ TextButton_1.MouseButton1Click:Connect(function()  
+                  game.CoreGui:FindFirstChild("SonicLib"):Destroy()  
+          end) 
+	UIPadding_2.Parent = TopBar_1
+	UIPadding_2.PaddingRight = UDim.new(0,3)
+
+	TabFrameHolder_1.Name = "TabFrameHolder"
+	TabFrameHolder_1.Parent = Main_1
+	TabFrameHolder_1.BackgroundColor3 = Color3.fromRGB(38,38,38)
+	TabFrameHolder_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	TabFrameHolder_1.Position = UDim2.new(0, 0,0.141104296, 0)
+	TabFrameHolder_1.Size = UDim2.new(0, 100,0, 140)
+
+	UICorner_3.Parent = TabFrameHolder_1
+	UICorner_3.CornerRadius = UDim.new(0,4)
+
+	TabFrameHolder_2.Name = "TabFrameHolder"
+	TabFrameHolder_2.Parent = TabFrameHolder_1
+	TabFrameHolder_2.BackgroundColor3 = Color3.fromRGB(38,38,38)
+	TabFrameHolder_2.BorderColor3 = Color3.fromRGB(27,42,53)
+	TabFrameHolder_2.BorderSizePixel = 0
+	TabFrameHolder_2.Position = UDim2.new(0.701046765, 0,0.00539005827, 0)
+	TabFrameHolder_2.Size = UDim2.new(0, 32,0, 139)
+
+	TabFrame_1.Name = "TabFrame"
+	TabFrame_1.Parent = TabFrameHolder_1
+	TabFrame_1.Active = true
+	TabFrame_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	TabFrame_1.BackgroundTransparency = 1
+	TabFrame_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	TabFrame_1.BorderSizePixel = 0
+	TabFrame_1.Size = UDim2.new(0, 100,0, 140)
+	TabFrame_1.ClipsDescendants = true
+	TabFrame_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+	TabFrame_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+	TabFrame_1.CanvasPosition = Vector2.new(0, 0)
+	TabFrame_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+	TabFrame_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+	TabFrame_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+	TabFrame_1.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+	TabFrame_1.ScrollBarImageTransparency = 1
+	TabFrame_1.ScrollBarThickness = 1
+	TabFrame_1.ScrollingDirection = Enum.ScrollingDirection.XY
+	TabFrame_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+	TabFrame_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+	TabFrame_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+	
+	UIListLayout_1.Parent = TabFrame_1
+	UIListLayout_1.Padding = UDim.new(0,4)
+	UIListLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
+
+	UIPadding_3.Parent = TabFrame_1
+	UIPadding_3.PaddingLeft = UDim.new(0,4)
+	UIPadding_3.PaddingTop = UDim.new(0,2)
+	
+	ItemFrameHolder_1.Name = "ItemFrameHolder"
+	ItemFrameHolder_1.Parent = Main_1
+	ItemFrameHolder_1.BackgroundColor3 = Color3.fromRGB(66,66,66)
+	ItemFrameHolder_1.BackgroundTransparency = 1
+	ItemFrameHolder_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	ItemFrameHolder_1.BorderSizePixel = 0
+	ItemFrameHolder_1.Position = UDim2.new(0.368231058, 0,0.15337424, 0)
+	ItemFrameHolder_1.Size = UDim2.new(0, 174,0, 136)
+
+	CleanBG_1.Name = "CleanBG"
+	CleanBG_1.Parent = ItemFrameHolder_1
+	CleanBG_1.AnchorPoint = Vector2.new(0.5, 0.5)
+	CleanBG_1.BackgroundColor3 = Color3.fromRGB(66,66,66)
+	CleanBG_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	CleanBG_1.BorderSizePixel = 0
+	CleanBG_1.Position = UDim2.new(0.5, 0,0.5, 0)
+	CleanBG_1.Size = UDim2.new(0, 174,0, 136)
+	
+	
+	local Tabs = {}
+	function Tabs:CreateTab(TabName)
+		local targetTransparency1 = 0.5
+		local targetTransparency2 = 1
+		
+		local TabButtonHolder_1 = Instance.new("Frame")
+		local TabButton_1 = Instance.new("TextButton")
+		local UICorner_4 = Instance.new("UICorner")
+		local ItemFrame_1 = Instance.new("ScrollingFrame")
+		local UIPadding_4 = Instance.new("UIPadding")
+		local UIListLayout_2 = Instance.new("UIListLayout")
+		
+		TabButtonHolder_1.Name = "TabButtonHolder"
+		TabButtonHolder_1.Parent = TabFrame_1
+		TabButtonHolder_1.AnchorPoint = Vector2.new(0.5, 0.5)
+		TabButtonHolder_1.BackgroundColor3 = Color3.fromRGB(66,66,66)
+		TabButtonHolder_1.BorderColor3 = Color3.fromRGB(27,42,53)
+		TabButtonHolder_1.BorderSizePixel = 0
+		TabButtonHolder_1.Position = UDim2.new(0.485000014, 0,0.100000218, 0)
+		TabButtonHolder_1.Size = UDim2.new(0, 93,0, 24)
+
+		TabButton_1.Name = "TabButton"
+		TabButton_1.Parent = TabButtonHolder_1
+		TabButton_1.Active = true
+		TabButton_1.AnchorPoint = Vector2.new(0.5, 0.5)
+		TabButton_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+		TabButton_1.BackgroundTransparency = 1
+		TabButton_1.BorderColor3 = Color3.fromRGB(27,42,53)
+		TabButton_1.Position = UDim2.new(0.5, 0,0.5, 0)
+		TabButton_1.Size = UDim2.new(0, 93,0, 24)
+		TabButton_1.Font = Enum.Font.Gotham
+		TabButton_1.Text = TabName
+		TabButton_1.TextColor3 = Color3.fromRGB(255,255,255)
+		TabButton_1.TextSize = 12
+
+		UICorner_4.Parent = TabButtonHolder_1
+		UICorner_4.CornerRadius = UDim.new(0,4)
+		
+		ItemFrame_1.Name = "ItemFrame"
+		ItemFrame_1.Parent = CleanBG_1
+		ItemFrame_1.Active = true
+		ItemFrame_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+		ItemFrame_1.BackgroundTransparency = 1
+		ItemFrame_1.BorderColor3 = Color3.fromRGB(27,42,53)
+		ItemFrame_1.BorderSizePixel = 0
+		ItemFrame_1.Size = UDim2.new(0, 174,0, 136)
+		ItemFrame_1.ClipsDescendants = true
+		ItemFrame_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+		ItemFrame_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+		ItemFrame_1.CanvasPosition = Vector2.new(0, 0)
+		ItemFrame_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+		ItemFrame_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+		ItemFrame_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		ItemFrame_1.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+		ItemFrame_1.ScrollBarImageTransparency = 1
+		ItemFrame_1.ScrollBarThickness = 1
+		ItemFrame_1.ScrollingDirection = Enum.ScrollingDirection.XY
+		ItemFrame_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+		ItemFrame_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+		ItemFrame_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+		
+		UIPadding_4.Parent = ItemFrame_1
+		UIPadding_4.PaddingLeft = UDim.new(0,4)
+		UIPadding_4.PaddingTop = UDim.new(0,4)
+		
+		UIListLayout_2.Parent = ItemFrame_1
+		UIListLayout_2.Padding = UDim.new(0,4)
+		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+		
+		local tweenInfo = TweenInfo.new(0.5)
+
+		local tween1 = TweenService:Create(TabButton_1, tweenInfo, {BackgroundTransparency = targetTransparency1})
+		local tween2 = TweenService:Create(TabButton_1, tweenInfo, {BackgroundTransparency = targetTransparency2})
+
+		TabButton_1.MouseButton1Click:Connect(function()  
+			tween1:Play()
+			wait(0.1)
+			tween2:Play()
+		end) 
+		
+		TabButton_1.MouseButton1Click:Connect(function()  
+			for i,v in next, CleanBG_1:GetChildren() do -- We get all the pages that we added  
+				v.Visible = false   -- then we make them invisible   
+			end   
+			ItemFrame_1.Visible = true  -- We make current page visible but not others  
+		end) 
+		
+		local Elements = {}
+		function Elements:CreateButton(ButName,Callback)
+			Callback = Callback or function() end 
+
+			local targetTransparency1 = 0.5
+			local targetTransparency2 = 1
+			
+			local ButtonButtonFrame_1 = Instance.new("Frame")
+			local UICorner_6 = Instance.new("UICorner")
+			local Button_1 = Instance.new("TextButton")
+			local UICorner_666 = Instance.new("UICorner")
+			
+			ButtonButtonFrame_1.Name = "ButtonButtonFrame"
+			ButtonButtonFrame_1.Parent = ItemFrame_1
+			ButtonButtonFrame_1.BackgroundColor3 = Color3.fromRGB(38,38,38)
+			ButtonButtonFrame_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			ButtonButtonFrame_1.BorderSizePixel = 0
+			ButtonButtonFrame_1.Position = UDim2.new(0, 0,-0.0036764699, 0)
+			ButtonButtonFrame_1.Size = UDim2.new(0, 167,0, 22)
+
+			UICorner_6.Parent = ButtonButtonFrame_1
+			UICorner_6.CornerRadius = UDim.new(0,4)
+
+			Button_1.Name = "Button"
+			Button_1.Parent = ButtonButtonFrame_1
+			Button_1.Active = true
+			Button_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Button_1.BackgroundTransparency = 1
+			Button_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			Button_1.BorderSizePixel = 0
+			Button_1.Size = UDim2.new(0, 167,0, 22)
+			Button_1.Font = Enum.Font.Gotham
+			Button_1.Text = ButName
+			Button_1.TextColor3 = Color3.fromRGB(255,255,255)
+			Button_1.TextSize = 11
+			
+			UICorner_666.Parent = Button_1
+			UICorner_666.CornerRadius = UDim.new(0,4)
+			
+			local tweenInfo = TweenInfo.new(0.5)
+
+			local tween1 = TweenService:Create(Button_1, tweenInfo, {BackgroundTransparency = targetTransparency1})
+			local tween2 = TweenService:Create(Button_1, tweenInfo, {BackgroundTransparency = targetTransparency2})
+
+			Button_1.MouseButton1Click:Connect(function()  
+				tween1:Play()
+				wait(0.1)
+				tween2:Play()
+				Callback()  
+			end) 
+			
+		end
+		function Elements:CreateBox(BoxName,Callback)
+			local TextBoxFrame_1 = Instance.new("Frame")
+			local UICorner_9 = Instance.new("UICorner")
+			local Toggle_2 = Instance.new("TextLabel")
+			local UIPadding_6 = Instance.new("UIPadding")
+			local TextBox_1 = Instance.new("TextBox")
+			local UICorner_10 = Instance.new("UICorner")
+			
+			TextBoxFrame_1.Name = "TextBoxFrame"
+			TextBoxFrame_1.Parent = ItemFrame_1
+			TextBoxFrame_1.BackgroundColor3 = Color3.fromRGB(38,38,38)
+			TextBoxFrame_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextBoxFrame_1.BorderSizePixel = 0
+			TextBoxFrame_1.Position = UDim2.new(0, 0,-0.0036764699, 0)
+			TextBoxFrame_1.Size = UDim2.new(0, 167,0, 22)
+
+			UICorner_9.Parent = TextBoxFrame_1
+			UICorner_9.CornerRadius = UDim.new(0,4)
+
+			Toggle_2.Name = "Toggle"
+			Toggle_2.Parent = TextBoxFrame_1
+			Toggle_2.Active = true
+			Toggle_2.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Toggle_2.BackgroundTransparency = 1
+			Toggle_2.BorderColor3 = Color3.fromRGB(27,42,53)
+			Toggle_2.BorderSizePixel = 0
+			Toggle_2.Size = UDim2.new(0, 94,0, 22)
+			Toggle_2.Font = Enum.Font.Gotham
+			Toggle_2.Text = BoxName
+			Toggle_2.TextColor3 = Color3.fromRGB(255,255,255)
+			Toggle_2.TextSize = 11
+			Toggle_2.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_6.Parent = Toggle_2
+			UIPadding_6.PaddingLeft = UDim.new(0,5)
+
+			TextBox_1.Parent = TextBoxFrame_1
+			TextBox_1.BackgroundColor3 = Color3.fromRGB(85,85,85)
+			TextBox_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextBox_1.BorderSizePixel = 0
+			TextBox_1.Position = UDim2.new(0.592814386, 0,0.13636364, 0)
+			TextBox_1.Size = UDim2.new(0, 65,0, 15)
+			TextBox_1.Font = Enum.Font.Gotham
+			TextBox_1.PlaceholderColor3 = Color3.fromRGB(178,178,178)
+			TextBox_1.PlaceholderText = ""
+			TextBox_1.Text = ""
+			TextBox_1.TextColor3 = Color3.fromRGB(255,255,255)
+			TextBox_1.TextSize = 9
+
+			UICorner_10.Parent = TextBox_1
+			UICorner_10.CornerRadius = UDim.new(0,4)
+			
+			TextBox_1.FocusLost:Connect(function(enterpressed)  
+				if enterpressed then  
+					Callback(TextBox_1.Text)  
+				end  
+			end) 
+		end
+		function Elements:CreateToggle(TogName,Callback)
+			local toggled = false  
+			local debounce = false
+			local targetColor1 = Color3.fromRGB(208, 208, 208)
+			local targetColor2 = Color3.fromRGB(85,85,85)
+			local tweenInfo = TweenInfo.new(0.2)
+			
+			local ToggleButtonFrame_1 = Instance.new("Frame")
+			local UICorner_7 = Instance.new("UICorner")
+			local Toggle_1 = Instance.new("TextButton")
+			local UIPadding_5 = Instance.new("UIPadding")
+			local TogglerState_1 = Instance.new("Frame")
+			local UICorner_8 = Instance.new("UICorner")
+			
+			ToggleButtonFrame_1.Name = "ToggleButtonFrame"
+			ToggleButtonFrame_1.Parent = ItemFrame_1
+			ToggleButtonFrame_1.BackgroundColor3 = Color3.fromRGB(38,38,38)
+			ToggleButtonFrame_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			ToggleButtonFrame_1.BorderSizePixel = 0
+			ToggleButtonFrame_1.Position = UDim2.new(0, 0,-0.0036764699, 0)
+			ToggleButtonFrame_1.Size = UDim2.new(0, 167,0, 22)
+
+			UICorner_7.Parent = ToggleButtonFrame_1
+			UICorner_7.CornerRadius = UDim.new(0,4)
+
+			Toggle_1.Name = "Toggle"
+			Toggle_1.Parent = ToggleButtonFrame_1
+			Toggle_1.Active = true
+			Toggle_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Toggle_1.BackgroundTransparency = 1
+			Toggle_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			Toggle_1.BorderSizePixel = 0
+			Toggle_1.Size = UDim2.new(0, 167,0, 22)
+			Toggle_1.Font = Enum.Font.Gotham
+			Toggle_1.Text = TogName
+			Toggle_1.TextColor3 = Color3.fromRGB(255,255,255)
+			Toggle_1.TextSize = 11
+			Toggle_1.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_5.Parent = Toggle_1
+			UIPadding_5.PaddingLeft = UDim.new(0,5)
+
+			TogglerState_1.Name = "TogglerState"
+			TogglerState_1.Parent = ToggleButtonFrame_1
+			TogglerState_1.BackgroundColor3 = Color3.fromRGB(85,85,85)
+			TogglerState_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TogglerState_1.BorderSizePixel = 0
+			TogglerState_1.Position = UDim2.new(0.89221549, 0,0.13636364, 0)
+			TogglerState_1.Size = UDim2.new(0, 15,0, 15)
+
+			UICorner_8.Parent = TogglerState_1
+			UICorner_8.CornerRadius = UDim.new(0,4)
+			
+			local tweenon = TweenService:Create(TogglerState_1, tweenInfo, {BackgroundColor3 = targetColor1})
+			local tweenoff = TweenService:Create(TogglerState_1, tweenInfo, {BackgroundColor3 = targetColor2})
+
+			Toggle_1.MouseButton1Click:Connect(function()  
+				if debounce == false then  
+					if toggled == false then  
+						debounce = true  
+						tweenon:Play()
+						debounce = false  
+						toggled = true  
+						pcall(Callback, toggled)  
+					elseif toggled == true then  
+						debounce = true   
+						tweenoff:Play()
+						debounce = false  
+						toggled = false  
+						pcall(Callback, toggled)  
+					end  
+				end  
+			end)
+		end
+		return Elements		
+	end
+	return Tabs
+end
+return Library
