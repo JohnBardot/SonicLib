@@ -429,6 +429,40 @@ function Library:CreateWindow(WinName)
 				end  
 			end)
 		end
+                function Elements:CreateLabel(LabName) 
+                         
+                         local ButtonButtonFrame_1 = Instance.new("Frame") 
+                         
+                         local Button_1 = Instance.new("TextLabel") 
+                         
+  
+                         ButtonButtonFrame_1.Name = "ButtonButtonFrame" 
+                         ButtonButtonFrame_1.Parent = ItemFrame_1 
+                         ButtonButtonFrame_1.BackgroundColor3 = Color3.fromRGB(38,38,38) 
+                         ButtonButtonFrame_1.BorderColor3 = Color3.fromRGB(27,42,53) 
+                         ButtonButtonFrame_1.BorderSizePixel = 0 
+                         ButtonButtonFrame_1.Position = UDim2.new(0, 0,-0.0036764699, 0) 
+                         ButtonButtonFrame_1.Size = UDim2.new(0, 167,0, 22) 
+  ButtonButtonFrame_1.BackgroundTransparency = 1
+                         
+  
+                         Button_1.Name = "Button" 
+                         Button_1.Parent = ButtonButtonFrame_1 
+                         Button_1.Active = true 
+                         Button_1.BackgroundColor3 = Color3.fromRGB(255,255,255) 
+                         Button_1.BackgroundTransparency = 1 
+                         Button_1.BorderColor3 = Color3.fromRGB(27,42,53) 
+                         Button_1.BorderSizePixel = 0 
+                         Button_1.Size = UDim2.new(0, 167,0, 22) 
+                         Button_1.Font = Enum.Font.Gotham 
+                         Button_1.Text = LabName 
+                         Button_1.TextColor3 = Color3.fromRGB(255,255,255) 
+                         Button_1.TextSize = 11 
+  
+                         
+  
+                      
+                 end
 		return Elements		
 	end
 	return Tabs
